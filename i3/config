@@ -179,7 +179,7 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 	position top
-	tray_output none
+	# tray_output none
 	colors {
 		background #000000
 		statusline #ffffff
@@ -207,7 +207,6 @@ exec_always --no-startup-id nitrogen --restore
 exec --no-startup-id xscreensaver
 exec --no-startup-id compton -b
 exec --no-startup-id gxkb
-exec --no-startup-id telegram-desktop
 
 # monitor
 #exec xrandr --output eDP-1 --mode 1366x768

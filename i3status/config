@@ -9,6 +9,7 @@
 general {
         colors = true
         interval = 1
+	output_format = "i3bar"
 }
 
 order += "disk /"
@@ -20,8 +21,8 @@ order += "wireless _first_"
 order += "tztime local"
 
 volume master {
-    format = "Vol: %volume"
-    format_muted = "Vol: Muted"
+    format = ": %volume"
+    format_muted = ": Muted"
     device = "default"
     mixer = "Master"
     mixer_idx = 0
@@ -38,11 +39,6 @@ wireless _first_ {
         format_down = "WI-FI: down"
  }
 
-ethernet _first_ {
-        format_up = "E: %ip (%speed)"
-        format_down = "E: down"
-}
-
 battery all {
         format = "%status %percentage"
 	low_threshold = 15
@@ -57,12 +53,12 @@ load {
 }
 
 memory {
-    format = "RAM: %used"
+    format = "MEM: %used"
     threshold_degraded = "3G"
     threshold_critical = "2G"
-    format_degraded = "RAM: %used"
+    format_degraded = "MEM: %used"
 }
 
 tztime local {
-        format = "DATA: %d.%m.%Y TIME: %H:%M:%S"
+        format = "%d/%m/%Y %H:%M:%S"
 }
