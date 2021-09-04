@@ -42,10 +42,10 @@ wireless _first_ {
 battery all {
         format = "%status %percentage"
 	format_down = "No battery"
-	status_chr = "" # статус подзарядки
-	status_bat = "" # статус в режиме работы от батареи
-	status_unk = "? UNK" # неизвестный статус
-	status_full = "" # статус полного заряда
+	status_chr = ""
+	status_bat = ""
+	status_unk = "? UNK"
+	status_full = ""
 	low_threshold = 15
 }
 
