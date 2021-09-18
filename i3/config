@@ -212,5 +212,4 @@ exec --no-startup-id compton -b
 exec --no-startup-id blueman-applet
 
 # monitor
-#exec xrandr --output eDP-1 --mode 1366x768
-#exec xrandr --outpu VGA-1 --mode 1440x900
+exec xrandr --output eDP-1 --mode 1366x768
