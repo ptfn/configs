@@ -14,43 +14,58 @@ general {
 
 order += "disk /"
 order += "cpu_usage"
+order += "cpu_temperature 0"
 order += "memory"
 order += "volume master"
 order += "battery all"
 order += "wireless _first_"
+order += "ethernet _first_"
 order += "tztime local"
 
+cpu_temperature 0 {
+    format = " %degrees°C"
+    max_threshold = "80"
+    format_above_threshold = " %degrees°C"
+    path = "/sys/devices/platform/thinkpad_hwmon/hwmon/hwmon5/temp1_input"
+}
+
 volume master {
-    format = ": %volume"
-    format_muted = ": Muted"
+    format = " %volume"
+    format_muted = " Muted"
     device = "default"
     mixer = "Master"
     mixer_idx = 0
 }
 
 cpu_usage {
-	format = ": %usage"
-	degraded_threshold = 80
-	max_threshold = 90
+	format = " %usage"
+	degraded_threshold = 75
+	max_threshold = 85
 }
 
 wireless _first_ {
-        format_up = ": %quality %frequency"
-        format_down = ": down"
- }
+	format_up = " %essid %quality"
+        format_down = ""
+}
+
+ethernet _first_ {
+    format_up = " %speed"
+    format_down = ""
+}
 
 battery all {
         format = "%status %percentage"
-	format_down = "No battery"
+	format_down = ""
+	last_full_capacity = true
 	status_chr = ""
 	status_bat = ""
-	status_unk = "? UNK"
+	status_unk = "?"
 	status_full = ""
-	low_threshold = 15
+	low_threshold = 10
 }
 
 disk "/" {
-        format = ": %free"
+        format = " %percentage_used"
 }
 
 load {
@@ -58,10 +73,10 @@ load {
 }
 
 memory {
-    format = ": %used"
+    format = " %used"
     threshold_degraded = "3G"
     threshold_critical = "2G"
-    format_degraded = ": %used"
+    format_degraded = " %used"
 }
 
 tztime local {
