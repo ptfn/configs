@@ -7,8 +7,8 @@
 # If the above line is not correctly displayed, fix your editor first!
 
 general {
-        colors = true
-        interval = 1
+    colors = true
+    interval = 1
 	output_format = "i3bar"
 }
 
@@ -24,7 +24,7 @@ order += "tztime local"
 
 cpu_temperature 0 {
     format = " %degrees°C"
-    max_threshold = "80"
+    max_threshold = "75"
     format_above_threshold = " %degrees°C"
     path = "/sys/devices/platform/thinkpad_hwmon/hwmon/hwmon5/temp1_input"
 }
@@ -61,11 +61,11 @@ battery all {
 	status_bat = ""
 	status_unk = "?"
 	status_full = ""
-	low_threshold = 10
+	low_threshold = 25
 }
 
 disk "/" {
-        format = " %percentage_used"
+        format = " %used"
 }
 
 load {
