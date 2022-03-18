@@ -221,13 +221,25 @@ mode "$system" {
 }
 
 
-# commands
-bindsym $mod+F1 exec --no-startup-id firefox
-bindsym $mod+F2 exec --no-startup-id telegram-desktop
-bindsym $mod+F3 exec --no-startup-id codium
-bindsym $mod+F4 exec --no-startup-id keepassxc
+# programs
+set $prog [f]irefox [t]elegram [c]odium [k]eepassxc
+mode "$prog" {
+   bindsym f exec --no-startup-id firefox, mode "default" 
+   bindsym t exec --no-startup-id telegram-desktop, mode "default" 
+   # bindsym e exec --no-startup-id element-desktop, mode "default" 
+   bindsym c exec --no-startup-id codium, mode "default" 
+   bindsym k exec --no-startup-id keepassxc, mode "default" 
+   # bindsym v exec --no-startup-id veracrypt, mode "default" 
 
+   bindsym Return mode "default"
+   bindsym Escape mode "default"
+   bindsym $mod+c mode "default"
+}
+
+
+# commands
 bindsym $mod+x mode "$system"
+bindsym $mod+c mode "$prog"
 bindsym Print exec gnome-screenshot
 
 
@@ -244,13 +256,12 @@ exec_always --no-startup-id nitrogen --restore
 exec --no-startup-id xscreensaver
 exec --no-startup-id compton -b
 exec --no-startup-id blueman-applet
-# exec --no-startup-id ipfs daemon
+exec --no-startup-id ipfs daemon
 
 
 # monitor
-exec xrandr --output eDP --mode 1920x1080
-#exec xrandr --output HDMI-1 --mode
-
+exec --no-startup-id xrandr --output eDP --mode 1920x1080
+#exec --no-startup-id xrandr --output HDMI-A-0 --mode *
 
 # light
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
@@ -260,8 +271,6 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 # i3-gaps
 for_window [class=".*"] border pixel 0
 for_window [class="i3bar"] gaps outer current set 10
-
-
 gaps inner 10
 gaps outer 10
 
