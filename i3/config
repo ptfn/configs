@@ -253,14 +253,14 @@ exec_always --no-startup-id nitrogen --restore
 
 
 # autostart
-exec --no-startup-id xscreensaver
-exec --no-startup-id compton -b
+exec_always --no-startup-id xscreensaver
+exec_always --no-startup-id compton -b
 exec --no-startup-id blueman-applet
 exec --no-startup-id ipfs daemon
 
 
 # monitor
-exec --no-startup-id xrandr --output eDP --mode 1920x1080
+exec_always --no-startup-id xrandr --output eDP --mode 1920x1080
 #exec --no-startup-id xrandr --output HDMI-A-0 --mode *
 
 # light
