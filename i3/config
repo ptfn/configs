@@ -28,7 +28,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-# exec --no-startup-id nm-applet
+exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -105,16 +105,27 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "Firefox "
-set $ws2 "Message "
-set $ws3 "Terminal "
-set $ws4 "Folder "
-set $ws5 "Code "
-set $ws6 "Music "
-set $ws7 "Crypto "
-set $ws8 "Editor "
-set $ws9 "Game "
+set $ws1 ""
+set $ws2 ""
+set $ws3 ""
+set $ws4 ""
+set $ws5 ""
+set $ws6 ""
+set $ws7 ""
+set $ws8 ""
+set $ws9 ""
 set $ws10 "10"
+
+# set $ws1 "Firefox "
+# set $ws2 "Message "
+# set $ws3 "Terminal "
+# set $ws4 "Folder "
+# set $ws5 "Code "
+# set $ws6 "Music "
+# set $ws7 "Crypto "
+# set $ws8 "Editor "
+# set $ws9 "Game "
+# set $ws10 "10"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -175,14 +186,14 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # set colors
-set $bg-color		 #1338be
-set $inactive-bg-color   #212134
-set $text-color          #ffffff
-set $inactive-text-color #ffffff
-set $urgent-bg-color     #ff3232
+set $bg-color		        #1338be
+set $inactive-bg-color          #212134
+set $text-color                 #ffffff
+set $inactive-text-color        #ffffff
+set $urgent-bg-color            #ff3232
 
 # window colors
-# colorclass              border              background         text                 indicator
+# colorclass            border              background         text                 indicator
 client.focused          $bg-color           $bg-color          $text-color          $bg-color
 client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color $inactive-bg-color
 client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color $inactive-bg-color
