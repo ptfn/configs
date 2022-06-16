@@ -210,8 +210,8 @@ bindsym --release Shift+Print exec flameshot gui
 
 
 # keyboard
-exec --no-startup-id setxkbmap -layout us,ru -option grp:alt_shift_toggle
-exec --no-startup-id gxkb
+exec_always --no-startup-id setxkbmap -layout us,ru -option grp:alt_shift_toggle
+exec_always --no-startup-id gxkb
 
 
 # wallpaper
