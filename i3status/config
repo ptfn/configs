@@ -12,10 +12,7 @@ general {
 	output_format = "i3bar"
 }
 
-order += "disk /"
-order += "cpu_usage"
-order += "cpu_temperature 0"
-order += "memory"
+order += "load"
 order += "volume master"
 order += "battery all"
 order += "wireless _first_"
@@ -24,9 +21,9 @@ order += "tztime local"
 
 cpu_temperature 0 {
     format = " %degrees°C"
-    max_threshold = "75"
+    max_threshold = "80"
     format_above_threshold = " %degrees°C"
-    path = "/sys/devices/platform/thinkpad_hwmon/hwmon/hwmon5/temp1_input"
+    path = "/sys/class/hwmon/hwmon5/temp1_input"
 }
 
 volume master {
@@ -40,21 +37,21 @@ volume master {
 cpu_usage {
 	format = " %usage"
 	degraded_threshold = 75
-	max_threshold = 85
+	max_threshold = 90
 }
 
 wireless _first_ {
-	format_up = " %essid %quality"
-        format_down = ""
+	format_up = "%quality (%bitrate)"
+    format_down = ""
 }
 
 ethernet _first_ {
-    format_up = " %speed"
+    format_up = "%speed"
     format_down = ""
 }
 
 battery all {
-        format = "%status %percentage"
+    format = "%status %percentage"
 	format_down = ""
 	last_full_capacity = true
 	status_chr = ""
@@ -69,7 +66,7 @@ disk "/" {
 }
 
 load {
-        format = "%1min"
+        format = " %1min/%5min/%15min"
 }
 
 memory {

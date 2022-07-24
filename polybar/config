@@ -52,10 +52,10 @@ fixed-center = false
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 2
+line-size = 0
 line-color = #f00
 
-border-size = 5
+border-size = 0
 border-color = #00000000
 
 padding-left = 0
