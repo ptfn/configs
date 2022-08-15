@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+font pango:monospace 10
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -186,7 +186,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # set colors
-set $bg-color		        #1338be
+set $bg-color		            #1338be
 set $inactive-bg-color          #212134
 set $text-color                 #ffffff
 set $inactive-text-color        #ffffff
@@ -203,34 +203,46 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 # finds out, if available)
 exec_always --no-startup-id /home/ptfn/.config/polybar/launch.sh
 
+# bar {
+#     status_command i3status 
+# 	strip_workspace_numbers yes
+# 	position top
+# 	colors {
+# 		background #212134
+# 		separator #212134
 
-set $system [l]ock [e]xit [r]eboot [s]hutdown
-mode "$system" {
-   bindsym l exec --no-startup-id xscreensaver-command -l
-   bindsym e exec --no-startup-id i3-msg exit, mode "default"
-   bindsym r exec --no-startup-id systemctl reboot, mode "default"
-   bindsym s exec --no-startup-id systemctl poweroff -i, mode "default"  
+# 		#colorclass		border			background		text
+# 		focused_workspace	$bg-color		$bg-color		$text-color
+# 		inactive_workspace	$inactive-bg-color	$inactive-bg-color	$inactive-text-color
+# 		urgent_workspace	$urgent-bg-color	$urgent-bg-color	$text-color
+#     }
+# 
+# }
 
-   bindsym Return mode "default"
-   bindsym Escape mode "default"
-   bindsym $mod+x mode "default"
-}
+#system control
+# set $system [l]ock [e]xit [r]eboot [s]hutdown
+# mode "$system" {
+#    bindsym l exec --no-startup-id xscreensaver-command -l
+#    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+#    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+#    bindsym s exec --no-startup-id systemctl poweroff -i, mode "default"  
 
+#    bindsym Return mode "default"
+#    bindsym Escape mode "default"
+#    bindsym $mod+x mode "default"
+# }
 
 # commands
-bindsym $mod+x mode "$system"
+# bindsym $mod+x mode "$system"
 bindsym --release Print exec flameshot launcher
 bindsym --release Shift+Print exec flameshot gui
 
-
 # keyboard
 exec --no-startup-id gxkb
-exec --no-startup-id setxkbmap -layout us,ru -option grp:alt_shift_toggle
-
+exec_always --no-startup-id setxkbmap -layout us,ru -option grp:alt_shift_toggle
 
 # wallpaper
 exec_always --no-startup-id nitrogen --restore
-
 
 # autostart
 exec_always --no-startup-id xscreensaver 
@@ -239,17 +251,15 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id ipfs daemon
 exec --no-startup-id flameshot
 exec --no-startup-id safeeyes
-
+exec --no-startup-id conky
 
 # monitor
 exec_always --no-startup-id xrandr --output eDP --mode 1920x1080
-#exec --no-startup-id xrandr --output HDMI-A-0 --mode *
-
+exec --no-startup-id xrandr --output HDMI-A-0 --mode 1920x1080
 
 # light
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
-
 
 # i3-gaps
 for_window [class=".*"] border pixel 0

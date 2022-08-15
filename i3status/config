@@ -12,7 +12,6 @@ general {
 	output_format = "i3bar"
 }
 
-order += "load"
 order += "volume master"
 order += "battery all"
 order += "wireless _first_"
@@ -32,6 +31,7 @@ volume master {
     device = "default"
     mixer = "Master"
     mixer_idx = 0
+
 }
 
 cpu_usage {
@@ -78,4 +78,8 @@ memory {
 
 tztime local {
         format = " %d/%m/%Y  %H:%M:%S"
+}
+
+coins {
+    
 }
