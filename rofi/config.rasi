@@ -7,7 +7,7 @@
     drac-wht: #ffffff;
 
     opacity: 50;
-    padding: 3;
+    padding: 4;
     lines: 10;
     columns: 2;
     width: 900;
@@ -34,7 +34,7 @@
 }
 #mainbox {
     border:  0;
-    padding: 3;
+    padding: 5;
 }
 #message {
     border:       1px dash 0px 0px ;
@@ -48,7 +48,7 @@
     fixed-height: 0;
     border:       2px dash 0px 0px ;
     border-color: @bordercolor;
-    spacing:      2px ;
+    spacing:      0px ;
     scrollbar:    false;
     padding:      2px 0px 0px ;
 }
@@ -129,7 +129,7 @@
 #textbox-prompt-colon {
     expand:     true;
     str:        ":";
-    margin:     0px 0.3em 0em 0em ;
+    margin:     0px 0em 0em 0em ;
     text-color: @drac-wht;
 }
 element-text, element-icon {

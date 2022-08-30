@@ -116,17 +116,6 @@ set $ws8 ""
 set $ws9 ""
 set $ws10 "10"
 
-# set $ws1 "Firefox "
-# set $ws2 "Message "
-# set $ws3 "Terminal "
-# set $ws4 "Folder "
-# set $ws5 "Code "
-# set $ws6 "Music "
-# set $ws7 "Crypto "
-# set $ws8 "Editor "
-# set $ws9 "Game "
-# set $ws10 "10"
-
 # switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
@@ -203,35 +192,6 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 # finds out, if available)
 exec_always --no-startup-id /home/ptfn/.config/polybar/launch.sh
 
-# bar {
-#     status_command i3status 
-# 	strip_workspace_numbers yes
-# 	position top
-# 	colors {
-# 		background #212134
-# 		separator #212134
-
-# 		#colorclass		border			background		text
-# 		focused_workspace	$bg-color		$bg-color		$text-color
-# 		inactive_workspace	$inactive-bg-color	$inactive-bg-color	$inactive-text-color
-# 		urgent_workspace	$urgent-bg-color	$urgent-bg-color	$text-color
-#     }
-# 
-# }
-
-#system control
-# set $system [l]ock [e]xit [r]eboot [s]hutdown
-# mode "$system" {
-#    bindsym l exec --no-startup-id xscreensaver-command -l
-#    bindsym e exec --no-startup-id i3-msg exit, mode "default"
-#    bindsym r exec --no-startup-id systemctl reboot, mode "default"
-#    bindsym s exec --no-startup-id systemctl poweroff -i, mode "default"  
-
-#    bindsym Return mode "default"
-#    bindsym Escape mode "default"
-#    bindsym $mod+x mode "default"
-# }
-
 # commands
 # bindsym $mod+x mode "$system"
 bindsym --release Print exec flameshot launcher
@@ -248,6 +208,7 @@ exec_always --no-startup-id nitrogen --restore
 exec_always --no-startup-id xscreensaver 
 exec_always --no-startup-id compton -b
 exec --no-startup-id blueman-applet
+exec --no-startup-id redshift-gtk
 exec --no-startup-id ipfs daemon
 exec --no-startup-id flameshot
 exec --no-startup-id safeeyes
@@ -258,8 +219,8 @@ exec_always --no-startup-id xrandr --output eDP --mode 1920x1080
 exec --no-startup-id xrandr --output HDMI-A-0 --mode 1920x1080
 
 # light
-bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
 
 # i3-gaps
 for_window [class=".*"] border pixel 0
