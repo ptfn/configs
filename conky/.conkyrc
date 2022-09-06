@@ -80,7 +80,7 @@ ${color1}SYSTEM $hr ${color}
 ${color2}Hostname:${color}   $nodename
 ${color2}Kernel:${color}     $kernel
 ${color2}Uptime:${color}     $uptime
-${color2}Date:${color}       ${time %e %b %Y %A}
+${color2}Date:${color}       ${time %d %b %Y %A}
 ${color2}Time:${color}       ${time %H:%M:%S}
 
 ${color1}CPU $hr ${color}
@@ -98,18 +98,18 @@ ${top name 3} ${top pid 3} ${top cpu 3} ${top mem 3}
 ${top name 4} ${top pid 4} ${top cpu 4} ${top mem 4}
 
 ${color1}MEMORY $hr ${color}
-${color2}        Used           Total${color}
-${color2}RAM:${color}    ${alignc}${mem}        ${memmax}   ${membar 4}
-${color2}Swap:${color}   ${alignc}${swap}         ${swapmax}  ${swapbar 4}
+${color2}RAM:${color}   ${alignc}${mem}  ${alignr}${memmax}  ${alignr}${membar 4, 100}
+${color2}Swap:${color}  ${alignc}${swap} ${alignr}${swapmax} ${alignr}${swapbar 4, 100}
 
 ${color1}FILE SYSTEM $hr ${color}
-${color2}Name    Used%   Free${color}
-/       ${fs_used_perc /}%      ${fs_free /}    ${fs_bar 6 /}
+${color2}Root:${color} ${alignr}${fs_free /home} / ${fs_size /home}
+${fs_bar 4 /}
 
 ${color1}NETWORKING (${addr wlp3s0}) $hr ${color}
 ${color2}Up:${color} ${upspeed wlp3s0} ${alignr}${color2}Down:${color} ${downspeed wlp3s0}
 ${color2}Total:${color} ${totalup wlp3s0} ${alignr}${color2}Total:${color} ${totaldown wlp3s0}
 ${upspeedgraph wlp3s0 40,200 000000 00ff56} ${downspeedgraph wlp3s0 40,200 000000 ff3800}
+
 ${color1}COINS $hr ${color}
 ${color2}Bitcoin ${color} ${alignr} ${texeci 60 python3 ~/Project/operating-time/python/coin.py btc}
 ${color2}Ethereum ${color} ${alignr} ${texeci 60 python3 ~/Project/operating-time/python/coin.py eth}
