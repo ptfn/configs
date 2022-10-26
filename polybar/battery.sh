@@ -16,8 +16,8 @@ else
         $PERCENT > 40 && $PERCENT <= 60 ? 3 : 4)) in
 
         (1) echo " $PERCENT%";;
-        (2) echo " $PERCENT%";;
-        (3) echo " $PERCENT%";;
-        (4) echo " $PERCENT%";;
+        (2) echo " $PERCENT%";;
+        (3) echo " $PERCENT%";;
+        (4) echo " $PERCENT%";;
 esac
 fi

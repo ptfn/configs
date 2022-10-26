@@ -154,7 +154,7 @@ label-visible = %name%
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
-t
+
 label-urgent = %name%
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
