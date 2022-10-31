@@ -71,7 +71,7 @@ font-3 = FontAwesome:style=Regular:pixelsize=10
 
 modules-left = bspwm i3 sep xwindow
 modules-center = 
-modules-right = coin battery pulseaudio xkeyboard  wlan eth date powermenu sep
+modules-right = battery pulseaudio xkeyboard wlan eth date powermenu sep
 
 
 tray-position = right
@@ -216,8 +216,6 @@ interface = wlp3s0
 interval = 3.0
 
 format-connected = <label-connected>
-; <ramp-signal>
-format-connected-underline = #001bff
 label-connected =  %signal%%
 
 format-disconnected =
@@ -227,9 +225,7 @@ type = internal/network
 interface = enp2s0
 interval = 3.0
 
-format-connected-underline = #001bff
 format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected =  %local_ip%
 
 format-disconnected =
