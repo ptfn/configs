@@ -70,8 +70,8 @@ font-2 = siji:pixelsize=10;1
 font-3 = FontAwesome:style=Regular:pixelsize=10
 
 modules-left = bspwm i3 sep xwindow
-modules-center = 
-modules-right = battery pulseaudio xkeyboard wlan eth date powermenu sep
+modules-center = date
+modules-right = battery pulseaudio xkeyboard wlan eth sep
 
 
 tray-position = right
@@ -336,14 +336,16 @@ label-close-foreground = ${colors.secondary}
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
 
-menu-0-0 = lock
-menu-0-0-exec = xscreensaver-command -l
-menu-0-1 = reboot
-menu-0-1-exec = systemctl reboot
-menu-0-2 = poweroff
-menu-0-2-exec = systemctl poweroff
-menu-0-3 = exit
-menu-0-3-exec = i3-msg exit
+menu-0-0 = restart
+menu-0-0-exec = i3-msg restart
+menu-0-1 = lock
+menu-0-1-exec = xscreensaver-command -l
+menu-0-2 = reboot
+menu-0-2-exec = systemctl reboot
+menu-0-3 = poweroff
+menu-0-3-exec = systemctl poweroff
+menu-0-4 = exit
+menu-0-4-exec = i3-msg exit
 
 [settings]
 screenchange-reload = true

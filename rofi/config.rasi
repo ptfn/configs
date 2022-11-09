@@ -1,28 +1,27 @@
 * {
-    /* Dracula theme colour palette */
-    drac-bgd: #282a36;
-    drac-cur: #44475a;
-    drac-fgd: #f8f8f2;
-    drac-blu: #1338be;
-    drac-wht: #ffffff;
+    bgd:    #282a36;
+    cur:    #44475a;
+    fgd:    #f8f8f2;
+    blue:   #1338be;
+    white:  #ffffff;
 
-    opacity: 50;
-    padding: 4;
-    lines: 10;
-    columns: 2;
-    width: 900;
-    font: "Monospace 12";
+    opacity:    50;
+    padding:    4;
+    lines:      10;
+    columns:    2;
+    width:      900;
+    font:       "Monospace 12";
 
-    foreground: @drac-fgd;
-    background-color: @drac-bgd;
-    active-background: @drac-blu;
-    urgent-background: @drac-wht;
+    foreground:         @fgd;
+    background-color:   @bgd;
+    active-background:  @blue;
+    urgent-background:  @white;
     
     selected-background: @active-background;
     selected-urgent-background: @urgent-background;
     selected-active-background: @active-background;
     separatorcolor: @active-background;
-    bordercolor: @drac-blu;
+    bordercolor: @blue;
 }
 
 #window {
@@ -117,11 +116,11 @@
 }
 #entry {
     spacing:    0;
-    text-color: @drac-wht;
+    text-color: @white;
 }
 #prompt {
     spacing:    0;
-    text-color: @drac-wht;
+    text-color: @white;
 }
 #inputbar {
     children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
@@ -130,7 +129,7 @@
     expand:     true;
     str:        ":";
     margin:     0px 0em 0em 0em ;
-    text-color: @drac-wht;
+    text-color: @white;
 }
 element-text, element-icon {
     background-color: inherit;
