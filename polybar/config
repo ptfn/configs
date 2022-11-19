@@ -70,8 +70,8 @@ font-2 = siji:pixelsize=10;1
 font-3 = FontAwesome:style=Regular:pixelsize=10
 
 modules-left = bspwm i3 sep xwindow
-modules-center = date
-modules-right = battery pulseaudio xkeyboard wlan eth sep
+modules-center = 
+modules-right = battery pulseaudio xkeyboard wlan eth date sep
 
 
 tray-position = right
