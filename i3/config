@@ -220,11 +220,13 @@ exec_always --no-startup-id xrandr --output eDP --mode 1920x1080
 exec --no-startup-id xrandr --output HDMI-A-0 --mode 1920x1080
 
 # light
-bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
+# bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
+# bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
+bindsym XF86MonBrightnessUp exec --no-startup-id /home/ptfn/.config/i3/light.sh +
+bindsym XF86MonBrightnessDown exec --no-startup-id /home/ptfn/.config/i3/light.sh -
 
 # i3-gaps
 for_window [class="^.*"] border pixel 5
 for_window [class="i3bar"] gaps outer current set 10
 gaps inner 15
-gaps outer 15
+gaps outer 10

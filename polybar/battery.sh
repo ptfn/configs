@@ -11,13 +11,15 @@ elif [[ $STATUS == "Full" ]]; then
 
 else
     case $((
-        $PERCENT >= 0 && $PERCENT <= 20 ? 1 :
-        $PERCENT > 20 && $PERCENT <= 40 ? 2 :
-        $PERCENT > 40 && $PERCENT <= 60 ? 3 : 4)) in
+        $PERCENT >= 0 && $PERCENT <= 10 ? 1 :
+        $PERCENT > 10 && $PERCENT <= 20 ? 2:
+        $PERCENT > 20 && $PERCENT <= 40 ? 3 :
+        $PERCENT > 40 && $PERCENT <= 60 ? 4 : 5)) in
 
-        (1) echo " $PERCENT%";;
-        (2) echo " $PERCENT%";;
-        (3) echo " $PERCENT%";;
-        (4) echo " $PERCENT%";;
-esac
+        (1) echo " $PERCENT%" && systemctl suspend;;
+        (2) echo " $PERCENT%" && brightnessctl set 10%;;
+        (3) echo " $PERCENT%";;
+        (4) echo " $PERCENT%";;
+        (5) echo " $PERCENT%";;
+    esac
 fi
