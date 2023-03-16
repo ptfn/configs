@@ -71,7 +71,7 @@ font-3 = FontAwesome:style=Regular:pixelsize=10
 
 modules-left = bspwm i3 sep xwindow
 modules-center = 
-modules-right = battery pulseaudio xkeyboard wlan eth date sep
+modules-right = brightness battery pulseaudio xkeyboard wlan eth date sep
 
 
 tray-position = right
@@ -305,6 +305,11 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 [module/battery]
 type = custom/script
 exec = ~/Project/configs/polybar/battery.sh
+interval = 1
+
+[module/brightness]
+type = custom/script
+exec = ~/Project/configs/polybar/brightness.sh
 interval = 1
 
 [module/temperature]

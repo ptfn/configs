@@ -74,7 +74,7 @@ conky.config = {
 }
 
 conky.text = [[
-${texeci 300 curl 'wttr.in/?0pQT'}
+${texeci 600 curl 'wttr.in/?0pQT'}
 
 ${color1}SYSTEM $hr ${color}
 ${color2}Hostname:${color}   $nodename
