@@ -207,16 +207,16 @@ exec_always --no-startup-id nitrogen --restore
 
 # monitor
 exec_always --no-startup-id xrandr --output eDP --primary --mode 1920x1080 --display :0.0 --pos 2496x0
-exec_always --no-startup-id xrandr --output HDMI-A-0 --mode 1920x1080 --display :0.1 --pos 0x0 --scale 1.3x1.3
+exec --no-startup-id xrandr --output HDMI-A-0 --mode 1920x1080 --display :0.0 --pos 0x0 --scale 1.3x1.3
 
 # autostart
 exec_always --no-startup-id xscreensaver 
-exec_always --no-startup-id compton -bf
+exec_always --no-startup-id compton --config ~/.config/compton/compton.conf
 exec --no-startup-id redshift-gtk
 exec --no-startup-id ipfs daemon
 exec --no-startup-id flameshot
 exec --no-startup-id safeeyes
-exec --no-startup-id conky -p 5
+exec --no-startup-id conky -p 1 -X :0.0
 
 # light
 bindsym XF86MonBrightnessUp exec --no-startup-id /home/ptfn/.config/i3/light.sh +

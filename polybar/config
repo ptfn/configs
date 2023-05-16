@@ -304,7 +304,7 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/battery]
 type = custom/script
-exec = ~/Project/configs/polybar/battery.sh
+exec = battery
 interval = 1
 
 [module/brightness]
