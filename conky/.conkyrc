@@ -74,7 +74,7 @@ conky.config = {
 }
 
 conky.text = [[
-${texeci 600 curl 'wttr.in/?0pQT'}
+${texeci 300 curl 'wttr.in/?0pQT'}
 
 ${color1}SYSTEM $hr ${color}
 ${color2}Hostname:${color}   $nodename
@@ -108,7 +108,7 @@ ${fs_bar 4 /}
 ${color1}NETWORKING (${addr wlp3s0}) $hr ${color}
 ${color2}Up:${color} ${upspeed wlp3s0} ${alignr}${color2}Down:${color} ${downspeed wlp3s0}
 ${color2}Total:${color} ${totalup wlp3s0} ${alignr}${color2}Total:${color} ${totaldown wlp3s0}
-${upspeedgraph wlp3s0 40,200 000000 00ff56} ${alignr}${downspeedgraph wlp3s0 40,200 000000 ff3800}
+${upspeedgraph wlp3s0 40,200 000000 00ff56} ${alignr}${downspeedgraph wlp3s0 40,200 000000 ff3800} 
 
 ${color1}COINS $hr ${color}
 ${color2}Bitcoin ${color} ${alignr} ${texeci 60 python3 ~/Project/operating-time/python/coin.py btc}
