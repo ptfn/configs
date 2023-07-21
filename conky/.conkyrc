@@ -74,12 +74,7 @@ conky.config = {
 }
 
 conky.text = [[
-<<<<<<< HEAD
 ${texeci 500 curl 'wttr.in/?0pQT'}
-=======
-${texeci 300 curl 'wttr.in/?0pQT'}
->>>>>>> refs/remotes/origin/main
-
 ${color1}SYSTEM $hr ${color}
 ${color2}Hostname:${color}   $nodename
 ${color2}Kernel:${color}     $kernel
