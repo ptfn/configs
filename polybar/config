@@ -71,7 +71,7 @@ font-3 = FontAwesome:style=Regular:pixelsize=10
 
 modules-left = bspwm i3 sep xwindow
 modules-center = 
-modules-right = brightness battery pulseaudio xkeyboard wlan eth date sep
+modules-right = brightness  pulseaudio xkeyboard wlan eth date sep
 
 
 tray-position = right
