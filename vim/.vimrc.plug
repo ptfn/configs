@@ -1,0 +1,9 @@
+call plug#begin('~/.vim/plugged')
+    Plug 'https://github.com/vim-airline/vim-airline' " Status Bar
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'sheerun/vim-polyglot'
+    Plug 'junegunn/fzf'         " Search Files
+    Plug 'preservim/nerdtree'   " File Manager
+    Plug 'mhinz/vim-startify'   " Start Window
+call plug#end()
+
